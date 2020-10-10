@@ -9,6 +9,7 @@ int main(void){
 	printf("\n");
 	putm(&matrix[0][0], 3, 4);
 	ref(&matrix[0][0], 3, 4);
+	printf("\n");
 	putm(&matrix[0][0], 3, 4);
 	
 	return 0;
