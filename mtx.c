@@ -4,11 +4,12 @@ void ref(char * A, int m, int n){
 	
 	int i = 0;
 	int j = 0;	
+	char temp;
 
 	for( ; j<n; j++){
 		for( ; i<m; i++){
 			if(A[i*n+j]){
-				printf("LMNZ: A[%d][%d]", i, j);
+				printf("LMNZ: A[%d][%d]\n", i, j);
 				goto swapToTop;
 			}
 		}
@@ -17,7 +18,11 @@ void ref(char * A, int m, int n){
 	//i may need to exit here if LMNZ doesnt exist
 
 	swapToTop:
-		;
+		for(int k = 0; k < n; k++){
+			temp = A[k];
+			A[k] = A[i*n+k];
+			A[i*n+k] = temp;  
+		}
 }
 
 void getm(char * A, int m, int n){
