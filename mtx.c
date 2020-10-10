@@ -1,5 +1,24 @@
 #include "mtx.h"
 
+void rref(char * A, int m, int n){
+	ref(A, m, n);
+	
+	for(int i = m-1; i > 0; i--){
+		for(int j = 0; j < n; j++){
+			if(A[i*n+j]){
+				for(int k = i-1; k >= 0; k--){
+					if(A[k*n+j]){
+						for(int l = 0; l < n; l++){
+							A[k*n+l] ^= A[i*n+l];
+						}
+					}
+				}
+				break;
+			}
+		}
+	}
+}
+
 void ref(char * A, int m, int n){
 	
 	static int calls = 0;
@@ -24,7 +43,6 @@ void ref(char * A, int m, int n){
 		}
 		i = 0; //Reset because i is not loop scoped
 	}
-	//(i may need to exit here)
 
 	swapToTop:
 		for(int k = 0; k < n; k++){
