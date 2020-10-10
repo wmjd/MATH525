@@ -1,9 +1,7 @@
 #include "mtx.h"
-#include "mtxio.h"
-
 
 int main(void){
-	
+     	
 
 	char matrix[3][4]; 
 
