@@ -1,25 +1,30 @@
 #include "mtx.h"
 
 
-#define N 5
-#define M 5
 
-int main(void){
+int main(int argc, char ** argv){
      	
-
-	char matrix[M][N]; 
-
-	getm(&matrix[0][0], M, N);
-	printf("\n");
-	putm(&matrix[0][0], M, N);
-
-	ref(&matrix[0][0], M, N);
-	printf("\n");
-	putm(&matrix[0][0], M, N);
+	char matrix[64][64]; 
 	
-	rref(&matrix[0][0], M, N);
+	if(argc != 3){
+		printf("usage: mtx <m> <n>\n");
+		return 0;
+	}
+	
+	int m = atoi(argv[1]);
+	int n = atoi(argv[2]);
+
+	getm(&matrix[0][0], m, n);
 	printf("\n");
-	putm(&matrix[0][0], M, N);
+	putm(&matrix[0][0], m, n);
+
+	ref(&matrix[0][0], m, n);
+	printf("\n");
+	putm(&matrix[0][0], m, n);
+	
+	rref(&matrix[0][0], m, n);
+	printf("\n");
+	putm(&matrix[0][0], m, n);
 
 	return 0;
 
