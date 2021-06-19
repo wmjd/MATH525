@@ -1,1 +1,1 @@
-This project contains code that will find REF and RREF for matrices with entries in GF(2). (The available tools did not work in GF(2).)
+This project contains code that will find REF and RREF for matrices with entries in GF(2). 
